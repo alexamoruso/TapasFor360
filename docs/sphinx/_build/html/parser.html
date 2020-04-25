@@ -1,0 +1,134 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parser &#8212; TAPAS 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Media Engine" href="mediaEngine.html" />
+    <link rel="prev" title="Controller" href="controller.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="mediaEngine.html" title="Media Engine"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="controller.html" title="Controller"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TAPAS 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="parser">
+<h1>Parser<a class="headerlink" href="#parser" title="Permalink to this headline">¶</a></h1>
+<p>The main task of a parser is to populate and update two data structures, <code class="docutils literal notranslate"><span class="pre">playlists</span></code> and <code class="docutils literal notranslate"><span class="pre">levels</span></code>, which are used by <code class="docutils literal notranslate"><span class="pre">TapasPlayer</span></code>.</p>
+<dl class="docutils">
+<dt>The <code class="docutils literal notranslate"><span class="pre">playlists</span></code> data structure is a list of dictionaries, one for each available video level. The dictionary has to include the following keys:</dt>
+<dd><ol class="first last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">url</span></code>: the video level base URL;</li>
+<li><code class="docutils literal notranslate"><span class="pre">is_live</span></code>: true if the video is a live stream;</li>
+<li><code class="docutils literal notranslate"><span class="pre">segments</span></code>: a list of dictionaries. Each dictionary contains: the <code class="docutils literal notranslate"><span class="pre">segment_url</span></code>; the <code class="docutils literal notranslate"><span class="pre">segment_duration</span></code>; and the <code class="docutils literal notranslate"><span class="pre">byterange</span></code>, when the video segmentation is logic.</li>
+<li><code class="docutils literal notranslate"><span class="pre">start_index</span></code>: index of the first chunk to be downloaded by the <em>Downlaoder</em>;</li>
+<li><code class="docutils literal notranslate"><span class="pre">end_index</span></code>: index of the last chunk of the current playlist;</li>
+<li><code class="docutils literal notranslate"><span class="pre">duration</span></code>: the duration (in seconds) of the playlist.</li>
+</ol>
+</dd>
+<dt>The <code class="docutils literal notranslate"><span class="pre">levels</span></code> data structure is a list of dictionaries, one for each available video level. The dictionary has to include the following keys:</dt>
+<dd><ol class="first last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">rate</span></code>: is the encoding rate of the video level measured in bytes/s;</li>
+<li><code class="docutils literal notranslate"><span class="pre">resolution</span></code>: is the video level resolution.</li>
+</ol>
+</dd>
+</dl>
+<div class="section" id="base-class-methods">
+<h2>Base class methods<a class="headerlink" href="#base-class-methods" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Parser</a><ul>
+<li><a class="reference internal" href="#base-class-methods">Base class methods</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="controller.html"
+                        title="previous chapter">Controller</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mediaEngine.html"
+                        title="next chapter">Media Engine</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/parser.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="mediaEngine.html" title="Media Engine"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="controller.html" title="Controller"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">TAPAS 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2014, Vito Caldaralo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
