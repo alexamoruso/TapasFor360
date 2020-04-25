@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- Mode: Python -*-
 # -*- encoding: utf-8 -*-
-# Copyright (c) Vito Caldaralo <vito.caldaralo@gmail.com>
+# Copyright (c) Alex Amoruso <alex.amoruso@hotmail.it>
 
 # This file may be distributed and/or modified under the terms of
 # the GNU General Public License version 2 as published by
